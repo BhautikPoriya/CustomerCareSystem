@@ -1,3 +1,4 @@
+using CustomerCareSystem.Services;
 using CustomerCareSystem.Services.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<CustomerCareSystemDbContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("CCSDbConnection"))
 );
+
+// DI
+builder.Services.AddScoped<ITokenService,TokenService>();
+builder.Services.AddScoped<IExecutiveService, ExecutiveService>();
 
 var app = builder.Build();
 

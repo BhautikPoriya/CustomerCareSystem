@@ -1,0 +1,22 @@
+﻿@using CustomerCareSystem.Models.Domain
+@model IList<Token>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Token</th>
+            <th>Type</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TokenId</td>
+                <td>@item.Type</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
